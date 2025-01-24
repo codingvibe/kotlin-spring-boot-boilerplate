@@ -1,0 +1,5 @@
+-- liquibase formatted sql
+
+-- changeset liquibase:1
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE TABLE users (id UUID PRIMARY KEY DEFAULT uuid_generate_v4(), name VARCHAR(256), details JSONB, created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP)
